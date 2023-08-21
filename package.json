@@ -1,7 +1,7 @@
 {
   "name": "miniprogram-login",
   "version": "1.0.0",
-  "description": "微信小程序登录封装包",
+  "description": "微信小程序鉴权封装包",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -12,6 +12,10 @@
     "login",
     "auth"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DcolorWei/miniprogram-login"
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
