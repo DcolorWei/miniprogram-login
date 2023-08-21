@@ -1,14 +1,15 @@
 import axios from 'axios';
-import { AuthError, AuthInfo, LoginRequest, LoginResponse } from '../typing/type'
+import { AuthError, AuthInfo, GrantType, LoginRequest, LoginResponse } from '../typing/type'
 
 export class AuthService {
     private readonly appid: string;
     private readonly secret: string;
     private readonly grant_type: string;
+
     private constructor(loginRequest: LoginRequest) {
         this.appid = loginRequest.appid;
         this.secret = loginRequest.secret;
-        this.grant_type = loginRequest.grant_type;
+        this.grant_type = GrantType.AUTHORIZATION_CODE;
     }
 
     public async login(code: string): Promise<AuthInfo | AuthError> {
@@ -18,7 +19,7 @@ export class AuthService {
                 if (res.data.errcode) {
                     resolve(new AuthError(res.data));
                 } else {
-                    resolve(new AuthInfo(res.data));
+                    reject(new AuthInfo(res.data));
                 }
             }).catch((err) => {
                 reject(err);
