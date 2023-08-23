@@ -47,11 +47,11 @@ const authService = new AuthService({
 ```typescript
 //微信小程序使用wx.login()
 authService.login(code)
-  .then((result) => {
+  .then((authInfo) => {
     // 登录成功，将会返回openid和unionid
     console.log(authInfo);
   })
-  .catch((error) => {
+  .catch((authError) => {
     // 登录失败，可能为密钥错误或者网络错误
     console.error(authError);
   });
