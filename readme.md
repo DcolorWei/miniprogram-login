@@ -37,8 +37,8 @@ import { AuthService } from 'miniprogram-login';
 
 ```typescript
 const authService = new AuthService({
-    appid: **********;
-    secret: **********;
+    appid: **********,
+    secret: **********
 });
 ```
 
